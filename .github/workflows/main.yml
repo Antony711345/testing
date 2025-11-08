@@ -18,9 +18,9 @@ jobs:
          echo "${{ secrets.ENV_FILE }}" > .env
 
       # Add the firebase_key.json file
-      - name: Add firebase_key_live.json file
-        run: |
-          echo "${{ secrets.FIREBASE_FILE_CONTENT }}" | base64 --decode > firebase_key.json  
+      #- name: Add firebase_key_live.json file
+       # run: |
+         # echo "${{ secrets.FIREBASE_FILE_CONTENT }}" | base64 --decode > firebase_key.json  
 
       
       
