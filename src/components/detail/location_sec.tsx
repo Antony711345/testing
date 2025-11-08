@@ -34,7 +34,7 @@ export const LocationSec = ({ location }: { location: string }) => {
             // Extract data from /maps/place/ URLs
             const dataMatch = googleMapsUrl.match(/!1s(0x[a-f0-9]+:0x[a-f0-9]+)/);
             if (dataMatch) {
-                placeId = dataMatch[1];
+              //  placeId = dataMatch[1];
             }
 
             // Handle maps.google.com URLs
