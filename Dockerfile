@@ -6,6 +6,8 @@ COPY . .
 
 # Skip TypeScript checking during build
 RUN npm run build || true
+COPY .env .env
+RUN npx vite build
 
 EXPOSE 9000
 CMD ["npx", "vite", "preview", "--host", "0.0.0.0", "--port", "9090"]
