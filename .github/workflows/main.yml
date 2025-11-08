@@ -18,6 +18,10 @@ jobs:
       - name: Add .env file
         run: |
           echo "${{ secrets.ENV_FILE }}" > .env
+       # Add the firebase_key.json file
+      - name: Add firebase.json file
+        run: |
+          echo "${{ secrets.FIREBASE_FILE_CONTENT_LIVE }}" | base64 --decode > firebase.json    
 
       # Set up Docker Buildx (if multi-platform builds are needed)
       - name: Set up Docker Buildx
