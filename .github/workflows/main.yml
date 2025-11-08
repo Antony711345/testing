@@ -13,6 +13,14 @@ jobs:
       # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Add .env file
+        run: |
+         echo "${{ secrets.ENV_FILE }}" > .env
+
+      # Add the firebase_key.json file
+      - name: Add firebase_key_live.json file
+        run: |
+          echo "${{ secrets.FIREBASE_FILE_CONTENT }}" | base64 --decode > firebase_key.json  
 
       
       
