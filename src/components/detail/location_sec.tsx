@@ -15,7 +15,7 @@ export const LocationSec = ({ location }: { location: string }) => {
             // Handle different Google Maps URL formats
             let lat: string | null = null;
             let lng: string | null = null;
-            let placeId: string | null = null;
+            //let placeId: string | null = null;
             let query: string | null = null;
 
             // Extract coordinates from various URL formats
