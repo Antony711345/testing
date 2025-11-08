@@ -40,12 +40,12 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ajithantony/test:v2.0 .
+          docker build -t ajithantony/test:v3.0 .
 
       # Push the Docker image to DockerHub
       - name: Push Docker image
         run: |
-          docker push ajithantony/test:v2.0
+          docker push ajithantony/test:v3.0
 
       # Deploy to the Linux server
       - name: Deploy to Server
@@ -58,12 +58,12 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             # Pull the latest Docker image
-            docker pull ajithantony/test:v2.0
+            docker pull ajithantony/test:v3.0
             
             # Stop and remove the existing container (if any)
-            docker stop test2|| true
-            docker rm test2|| true
+            docker stop test3|| true
+            docker rm test3|| true
             
             # Run the container with the new image
-            docker run  -d -p 9000:9000 --name test --restart always ajithantony/test:v2.0
+            docker run  -d -p 9000:9000 --name test --restart always ajithantony/test:v3.0
             docker image prune -a -f
