@@ -57,5 +57,5 @@ jobs:
             docker rm test|| true
             
             # Run the container with the new image
-            docker run  -d -p 4170:4170 --name test --restart always ajithantony/test:v1.0
+            docker run  -d -p 5050:5050 --name test --restart always ajithantony/test:v1.0
             docker image prune -a -f
