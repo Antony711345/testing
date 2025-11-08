@@ -14,14 +14,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-       # Add the .env file
-      - name: Add .env file
-        run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
-       # Add the firebase_key.json file
-      - name: Add firebase.json file
-        run: |
-          echo "${{ secrets.FIREBASE_FILE_CONTENT_LIVE }}" | base64 --decode > firebase.json    
+      
+      
+      
 
       # Set up Docker Buildx (if multi-platform builds are needed)
       - name: Set up Docker Buildx
@@ -62,5 +57,5 @@ jobs:
             docker rm test|| true
             
             # Run the container with the new image
-            docker run  -d -p 3001:3001 --name test --restart always ajithantony/test:v1.0
+            docker run  -d -p 4170:4170 --name test --restart always ajithantony/test:v1.0
             docker image prune -a -f
