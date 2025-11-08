@@ -13,5 +13,5 @@ RUN npm run build || (echo "Build failed, attempting to continue..." && exit 0)
 
 RUN npm install -g serve
 
-EXPOSE 3001
+EXPOSE 5050
 CMD ["serve", "-s", "dist", "-l", "3001"]
